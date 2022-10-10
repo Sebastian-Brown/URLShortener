@@ -1,12 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import Test from './Test';
+import Home from './Pages/Home';
 
 
 function App() {
   return (
-    <div >
-      <Test />
+    <div className="container">
+      <Home />
     </div>
   );
 }
