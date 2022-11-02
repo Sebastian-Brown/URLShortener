@@ -6,7 +6,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from "@react-three/fiber";
 
-export function Model(props) {
+export function InnerModel(props) {
   const { nodes } = useGLTF('/3d-model.gltf')
   const meshRef = useRef();
 
@@ -15,13 +15,13 @@ export function Model(props) {
       return;
     }
 
-    meshRef.current.rotation.x += 0.0008;
-    meshRef.current.rotation.y += 0.0002;
+    meshRef.current.rotation.x -= 0.002;
+    meshRef.current.rotation.y -= 0.008;
   });
   return (
     <group {...props} dispose={null}>
       <mesh ref={meshRef} geometry={nodes.mesh_0.geometry} castShadow>
-      <meshBasicMaterial color="#33bbcf" shininess={0} opacity={0.2} transparent />
+      <meshPhongMaterial color="#33bbcf" shininess={1} opacity={0.8} transparent/>
       </mesh>
     </group>
   )
