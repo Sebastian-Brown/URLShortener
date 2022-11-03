@@ -21,7 +21,7 @@ export function InnerModel(props) {
   return (
     <group {...props} dispose={null}>
       <mesh ref={meshRef} geometry={nodes.mesh_0.geometry} castShadow>
-      <meshPhongMaterial color="#33bbcf" shininess={1} opacity={0.8} transparent/>
+      <meshPhysicalMaterial color="#33bbcf" opacity={0.9} transparent/>
       </mesh>
     </group>
   )
