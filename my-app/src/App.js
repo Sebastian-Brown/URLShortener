@@ -21,7 +21,7 @@ import {OrbitControls, PerspectiveCamera } from "@react-three/drei";
 export default function App() {
 
   return (
-    <div className="sphere">
+    <div className="canvas">
       <Canvas>
       <PerspectiveCamera makeDefault position={[0, 0, 300]} />
         {/* <ambientLight intensity={0.1}/> */}
