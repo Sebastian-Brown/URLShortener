@@ -38,7 +38,8 @@ body,
   padding: 0;
   transform: translateY(400px);
   background: transparent;
-  background: linear-gradient(180deg, black 0%, #214d76 100%);
+  background: linear-gradient(180deg, black 0%, #214d76 60%, #ffffff 100%);
+  z-index: 1;
 }
 
 .spheres {

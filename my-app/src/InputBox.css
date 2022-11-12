@@ -1,0 +1,68 @@
+.InputBox {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+    margin-top: 700px;
+    z-index: 0;
+}
+
+.Placeholder {
+    margin-top: 1500px;
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+}
+
+.animationForInputBox {
+    display: block;
+    animation-name: animate-text;
+    animation-duration: 1.2s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+}
+
+@keyframes animate-text {
+    0% {
+        opacity: 0%;
+        left: 0px;
+        transform: translateX(-700px);
+    }
+
+    100% {
+
+        opacity: 100%;
+        transform: translateX(0px);
+    }
+}
+
+.button {
+    border: none;
+    color: rgb(156, 13, 13);
+    padding: 0px 5px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 8px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.button1 {
+    background-color: #33bbcf;
+    color: white;
+    border: 2px solid gray;
+}
+
+.button1:hover {
+    background-color: white;
+    color: white;
+    box-shadow: 0px 0px 200px 0px rgba(255, 255, 255, 0.24), 0px 0px 16px 5px rgba(255, 255, 255, 0.24);
+}

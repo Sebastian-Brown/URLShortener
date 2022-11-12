@@ -1,7 +1,7 @@
 import "./index.css";
-import "./Test.css";
+import "./Header.css";
 
-const Test = () => {
+const Header = () => {
   return (
           <div className="pageHeader flex-1 font-poppins
           font-semibold ss:text[72px] text-[52px]
@@ -18,4 +18,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default Header;

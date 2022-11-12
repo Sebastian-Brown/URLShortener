@@ -10,7 +10,8 @@
   height: 100%;
   margin: 0;
   padding: 0;
-  background: linear-gradient(180deg, #214d76 0%, black 20%);
+  background: linear-gradient(180deg, #214d76 0%, black 15%);
+  background-attachment: fixed;
 }
 
 code {
