@@ -2,16 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-#root {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+.home {
+  width: 100vw;
+  height: 100vh;
   background: linear-gradient(180deg, #214d76 0%, black 15%);
-  background-attachment: fixed;
+  position: fixed;
+
 }
 
 code {

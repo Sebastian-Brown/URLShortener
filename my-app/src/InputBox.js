@@ -10,7 +10,7 @@ const InputBox = () => {
         <div>
             <div className="InputBox">
             <span className={`${myElementIsVisible ? 'animationForInputBox' : 'hidden'}`}>
-                <form>
+                <form className="form">
                     <p className="font-poppins
                     font-semibold text-[72px]
                     text-white">Enter Your URL:</p>
@@ -22,7 +22,8 @@ const InputBox = () => {
                     </input>
 
                     <button className="font-poppins
-                     button button1 bg-discount-gradient rounded-[10px] bg-opacity-10 border-solid border-2 border-gray-900">Submit</button>
+                    bg-discount-gradient rounded-[10px] bg-opacity-10 border-solid border-2
+                    border-gray-900 button button1">Submit</button>
                 </form>
 
             </span>
