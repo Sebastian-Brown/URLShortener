@@ -11,6 +11,7 @@
     width: 500px;
     margin-top: 14vh;
     z-index: 2;
+    font-size: 52px;
 }
 
 .urlShort {
@@ -21,4 +22,34 @@
     background: linear-gradient(185.17deg, #272727 0%, #000000 100%);
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.moveScrollDownText {
+    margin-left: 1vh;
+}
+
+.hidden {
+    opacity: 0%;
+}
+
+.show {
+    opacity: 100%;
+}
+
+@media all and (max-device-width: 720px) {
+    .pageHeader {
+        font-size: 40px;
+        margin-top: 50px;
+        margin-left: 15px;
+        margin-right: auto;
+        width: 95%;
+    }
+
+    .moveScrollDownText {
+        opacity: 0%;
+    }
+
+    .pageHeader .urlShort {
+        width: 80vw;
+    }
 }

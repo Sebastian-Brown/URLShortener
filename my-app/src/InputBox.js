@@ -1,3 +1,4 @@
+import "./Header.css";
 import "./InputBox.css";
 import { useInView } from 'react-intersection-observer'
 
@@ -11,8 +12,7 @@ const InputBox = () => {
             <div className="InputBox">
             <span className={`${myElementIsVisible ? 'animationForInputBox' : 'hidden'}`}>
                 <form className="form">
-                    <p className="font-poppins
-                    font-semibold text-[72px]
+                    <p className="formTitle font-poppins font-semibold 
                     text-white">Enter Your URL:</p>
 
                     <input type="url" name="url" id="url"

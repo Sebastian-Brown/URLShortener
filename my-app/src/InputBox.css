@@ -12,8 +12,9 @@
 
 .Placeholder {
     margin-top: 130vh;
-    z-index: 2;
+    z-index: -1;
     position: absolute;
+    font-size: 72px
 }
 
 .animationForInputBox {
@@ -28,13 +29,13 @@
     0% {
         opacity: 0%;
         left: 0px;
-        transform: translateX(-700px);
+        transform: translateX(-70vw);
     }
 
     100% {
 
         opacity: 100%;
-        transform: translateX(0px);
+        transform: translateX(0vw);
     }
 }
 
@@ -67,4 +68,50 @@
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
+}
+
+.hidden {
+    opacity: 0%;
+}
+
+.formTitle {
+    font-size: 72px;
+}
+
+@media all and (max-device-width: 720px) {
+    .formTitle {
+        font-size: 20px;
+        overflow: hidden;
+    }
+
+    .InputBox {
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        margin-top: 40vh;
+        z-index: 2;
+    }
+
+    .Placeholder {
+        margin-top: 50vh;
+        opacity: 0%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50px;
+        font-size: 2px;
+    }
+
+    .form {
+        opacity: 100%;
+        z-index: 2;
+    }
+
+    .animationForInputBox {}
 }

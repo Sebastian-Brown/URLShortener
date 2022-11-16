@@ -19,11 +19,15 @@ import {OrbitControls, PerspectiveCamera } from "@react-three/drei";
 // }
 
 export default function App() {
-
+  let cameraDistance = 300;
+  console.log(window.innerWidth);
+    if (window.innerWidth < 700) {
+      cameraDistance = 300;
+    }
   return (
     <div className="canvas">
       <Canvas>
-      <PerspectiveCamera makeDefault position={[0, 0, 300]} />
+      <PerspectiveCamera makeDefault position={[0, 0, `${cameraDistance}`]} />
         {/* <ambientLight intensity={0.1}/> */}
         {/* <directionalLight
         castShadow
