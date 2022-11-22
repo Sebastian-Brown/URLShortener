@@ -38,11 +38,11 @@
 
 @media all and (max-device-width: 720px) {
     .pageHeader {
-        font-size: 40px;
+        font-size: 35px;
         margin-top: 50px;
         margin-left: 15px;
         margin-right: auto;
-        width: 95%;
+        width: 90%;
     }
 
     .moveScrollDownText {
@@ -50,6 +50,6 @@
     }
 
     .pageHeader .urlShort {
-        width: 80vw;
+        width: fit-content;
     }
 }

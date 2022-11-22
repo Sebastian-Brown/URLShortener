@@ -11,13 +11,13 @@ const InputBox = () => {
         <div>
             <div className="InputBox">
             <span className={`${myElementIsVisible ? 'animationForInputBox' : 'hidden'}`}>
-                <form className="form">
+                <form action="/shortUrls" method="POST" className="form">
                     <p className="formTitle font-poppins font-semibold 
                     text-white">Enter Your URL:</p>
 
-                    <input type="url" name="url" id="url"
+                    <input type="url" name="fullUrl" id="fullUrl"
                     placeholder="https://example.com"
-                    pattern="https://.*" size="30"
+                    pattern="https://.*"
                     required>
                     </input>
 
@@ -29,7 +29,7 @@ const InputBox = () => {
             </span>
             </div>
             <p ref={myRef} className="Placeholder font-poppins
-        font-semibold text-[72px]
+        font-semibold
         text-white">placeholder</p>
         </div>
     )

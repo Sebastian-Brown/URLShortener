@@ -22,7 +22,7 @@ export default function App() {
   let cameraDistance = 300;
   console.log(window.innerWidth);
     if (window.innerWidth < 700) {
-      cameraDistance = 300;
+      cameraDistance = 250;
     }
   return (
     <div className="canvas">
