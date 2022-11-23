@@ -20,9 +20,10 @@ import {OrbitControls, PerspectiveCamera } from "@react-three/drei";
 
 export default function App() {
   let cameraDistance = 300;
-  console.log(window.innerWidth);
-    if (window.innerWidth < 700) {
+  let scale = 1;
+    if (window.innerWidth <= 700) {
       cameraDistance = 250;
+      scale = 0.80;
     }
   return (
     <div className="canvas">
@@ -36,9 +37,8 @@ export default function App() {
         {/* <pointLight position={[0, 90, 10]} /> */}
         <hemisphereLight/>
         <Suspense fallback={null}>
-          <Model /> 
+          <Model scale={[scale,scale,scale]}/> 
           <InnerModel scale={[0.25,0.25,0.25]}/>
-          {/* <Floor className="floor"/>        */}
         </Suspense>
         <OrbitControls enableZoom={false} enablePan={false} />
       </Canvas>

@@ -15,8 +15,14 @@ export function Model(props) {
       return;
     }
 
-    meshRef.current.rotation.x += 0.0008;
-    meshRef.current.rotation.y += 0.0002;
+    if (window.innerWidth <= 720) {
+      meshRef.current.rotation.x += 0.0028;
+      meshRef.current.rotation.y += 0.0022;
+    } else {
+      meshRef.current.rotation.x += 0.0008;
+      meshRef.current.rotation.y += 0.0002;
+    }
+
   });
   return (
     <group {...props} dispose={null}>

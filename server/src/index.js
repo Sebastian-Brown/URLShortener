@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
 
-mongoose.connect('mongodb://localhost/URLShortener', {
+mongoose.connect('mongodb+srv://striddy:thevoidisdark@cluster0.idthmwe.mongodb.net/?retryWrites=true&w=majority', {
     useNewUrlParser: true, useUnifiedTopology: true
 })
 

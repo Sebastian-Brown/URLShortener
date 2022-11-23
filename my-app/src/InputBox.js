@@ -17,7 +17,7 @@ const InputBox = () => {
 
                     <input type="url" name="fullUrl" id="fullUrl"
                     placeholder="https://example.com"
-                    pattern="https://.*"
+                    pattern="https://.*" size={25}
                     required>
                     </input>
 
