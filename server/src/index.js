@@ -1,20 +1,31 @@
+const cors = require("cors")
 const express = require('express')
 const mongoose = require('mongoose')
 const shortURL = require('./models/shortURL')
 const app = express()
 
+
+
 require('dotenv').config()
+
+app.use(cors());
 
 app.use(express.urlencoded({ extended: false }))
 
-app.get('/',(req, res) => {
-    res.send("hell world");
+app.use(express.json());
+
+app.get('/:shortUrl', async (req, res) => {
+    const shortUrl = await shortURL.findOne({ shortenedURL: req.params.shortUrl})
+
+    if (shortUrl == null) return res.sendStatus(404)
+
+    res.redirect(shortUrl.URL)
 })
 
 app.post('/shortUrl', async (req, res) => {
     // shortURL.create({full: req.body.URL})
     const newURL = new shortURL({
-        URL: "https://www.youtube.com/watch?v=SLpUKAGnm-g&list=PLYxVTzT2VJnMfHRAhP2E3FsKCyc5bFYzT&index=4&ab_channel=WebDevSimplified"
+        URL: req.body.URL,
     });
     const createdURL = await newURL.save();
     res.json(createdURL);

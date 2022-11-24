@@ -12,11 +12,14 @@ const InputBox = () => {
 
     function handleURLSubmit(e) {
         e.preventDefault();
-        fetch('http//localhost:4000/shortUrl', {
+        fetch("http://localhost:4000/shortUrl", {
             method: 'POST',
             body: JSON.stringify({
                 URL,
-            })
+            }),
+            headers: {
+                "Content-Type": "application/json",
+            }
         });
     }
 
