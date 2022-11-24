@@ -1,21 +1,35 @@
 import "./Header.css";
 import "./InputBox.css";
 import { useInView } from 'react-intersection-observer'
+import React, {useState} from "react";
 
 const InputBox = () => {
 
     const {ref: myRef, inView: myElementIsVisible} = useInView();
     console.log('myElementIsVisible', myElementIsVisible);
 
+    const [URL, setURL] = useState("");
+
+    function handleURLSubmit(e) {
+        e.preventDefault();
+        fetch('http//localhost:4000/shortUrl', {
+            method: 'POST',
+            body: JSON.stringify({
+                URL,
+            })
+        });
+    }
+
     return (
         <div>
             <div className="InputBox">
             <span className={`${myElementIsVisible ? 'animationForInputBox' : 'hidden'}`}>
-                <form action="/shortUrls" method="POST" className="form">
+                <form onSubmit={handleURLSubmit} method="POST" className="form">
                     <p className="formTitle font-poppins font-semibold 
                     text-white">Enter Your URL:</p>
 
-                    <input type="url" name="fullUrl" id="fullUrl"
+                    <input value={URL} onChange={e => setURL(e.target.value)}
+                    type="url" name="fullUrl" id="full-URL"
                     placeholder="https://example.com"
                     pattern="https://.*" size={25}
                     required>
