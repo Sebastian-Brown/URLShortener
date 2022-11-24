@@ -11,6 +11,11 @@ const shortURLSchema = new mongoose.Schema ({
         type: String,
         required: true,
         default: shortID.generate
+    },
+
+    newCreatedURL : {
+        type: String,
+        // required: true
     }
 })
 

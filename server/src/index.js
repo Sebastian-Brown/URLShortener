@@ -27,6 +27,7 @@ app.post('/shortUrl', async (req, res) => {
     const newURL = new shortURL({
         URL: req.body.URL,
     });
+    newURL.newCreatedURL = `http://localhost:4000/${newURL.shortenedURL}`;
     const createdURL = await newURL.save();
     res.json(createdURL);
 });
