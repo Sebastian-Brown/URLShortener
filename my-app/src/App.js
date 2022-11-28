@@ -21,10 +21,11 @@ import {OrbitControls, PerspectiveCamera } from "@react-three/drei";
 
 
 export let scaleAcceleration = 0;
+export let rotationAcceleration = 0.002;
 export let spinning = false;
 
 export function spinModels() {
-  scaleAcceleration = 0.0008;
+  scaleAcceleration = 0.0001;
   spinning = true;  
   return scaleAcceleration
 }
