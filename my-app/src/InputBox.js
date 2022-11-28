@@ -2,6 +2,7 @@ import "./Header.css";
 import "./InputBox.css";
 import { useInView } from 'react-intersection-observer'
 import React, {useState} from "react";
+import {spinModels} from "./App.js";
 
 const InputBox = () => {
 
@@ -12,6 +13,7 @@ const InputBox = () => {
 
     function handleURLSubmit(e) {
         e.preventDefault();
+        spinModels()
         fetch("http://localhost:4000/shortUrl", {
             method: 'POST',
             body: JSON.stringify({

@@ -18,27 +18,34 @@ import {OrbitControls, PerspectiveCamera } from "@react-three/drei";
 //   );
 // }
 
+let scale = 1;
+// const speedAcceleration = 0;
+export let scaleAcceleration = 0;
+
+export function spinModels() {
+  if (scaleAcceleration <= 0) {
+    scaleAcceleration += -0.001
+  }
+  console.log(scaleAcceleration);
+  return scaleAcceleration
+}
+
 export default function App() {
   let cameraDistance = 300;
-  let scale = 1;
+  scale = scale + scaleAcceleration;
+  console.log(scale)
     if (window.innerWidth <= 700) {
       cameraDistance = 250;
-      scale = 0.80;
+      scale = 0.80 + scaleAcceleration;
     }
   return (
     <div className="canvas">
       <Canvas>
       <PerspectiveCamera makeDefault position={[0, 0, `${cameraDistance}`]} />
-        {/* <ambientLight intensity={0.1}/> */}
-        {/* <directionalLight
-        castShadow
-        position={[0,10,-600]}
-        intensity={1.5}/> */}
-        {/* <pointLight position={[0, 90, 10]} /> */}
         <hemisphereLight/>
         <Suspense fallback={null}>
-          <Model scale={[scale,scale,scale]}/> 
-          <InnerModel scale={[0.25,0.25,0.25]}/>
+          <Model/> 
+          <InnerModel/>
         </Suspense>
         <OrbitControls enableZoom={false} enablePan={false} />
       </Canvas>
