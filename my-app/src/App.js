@@ -18,25 +18,21 @@ import {OrbitControls, PerspectiveCamera } from "@react-three/drei";
 //   );
 // }
 
-let scale = 1;
-// const speedAcceleration = 0;
+
+
 export let scaleAcceleration = 0;
+export let spinning = false;
 
 export function spinModels() {
-  if (scaleAcceleration <= 0) {
-    scaleAcceleration += -0.001
-  }
-  console.log(scaleAcceleration);
+  scaleAcceleration = 0.0008;
+  spinning = true;  
   return scaleAcceleration
 }
 
 export default function App() {
   let cameraDistance = 300;
-  scale = scale + scaleAcceleration;
-  console.log(scale)
     if (window.innerWidth <= 700) {
       cameraDistance = 250;
-      scale = 0.80 + scaleAcceleration;
     }
   return (
     <div className="canvas">
