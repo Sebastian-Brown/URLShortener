@@ -39,9 +39,9 @@ export function Model(props) {
         shrinking = true;
       }
     } else if (meshRef.current.scale.x <= 1 && shrinking === true && finished === false) {
-      meshRef.current.scale.x += (acceleration * scaleAcceleration * 1.2);
-      meshRef.current.scale.y += (acceleration * scaleAcceleration * 1.2);
-      meshRef.current.scale.z += (acceleration * scaleAcceleration * 1.2);
+      meshRef.current.scale.x += (acceleration * scaleAcceleration * 1.8);
+      meshRef.current.scale.y += (acceleration * scaleAcceleration * 1.8);
+      meshRef.current.scale.z += (acceleration * scaleAcceleration * 1.8);
       meshRef.current.rotation.x += (rotationAcceleration * acceleration);
       meshRef.current.rotation.y += (rotationAcceleration * acceleration);
       if (meshRef.current.scale.x >= 1){

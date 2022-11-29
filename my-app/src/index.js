@@ -12,7 +12,7 @@ root.render(
   <React.StrictMode>
     <Home/>
     <Header />
-    <InputBox />
+    <InputBox/>
     <App />
   </React.StrictMode>
 );
