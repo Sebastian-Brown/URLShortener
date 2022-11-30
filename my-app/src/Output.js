@@ -1,13 +1,19 @@
 import "./Header.css";
 import "./InputBox.css";
-import React from "react";
+import React , { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCopy } from '@fortawesome/free-solid-svg-icons'
+import { faCopy, faArrowsRotate } from '@fortawesome/free-solid-svg-icons'
 
 
 
 const Output = () => {
     let newURL = "https://www.https://localhost:4000/I4MKkoS9S";
+
+    const [hovered, setHovered] = useState(false);
+    const handleHover = () => setHovered(!hovered);
+
+    const [hovered2, setHovered2] = useState(false);
+    const handleHover2 = () => setHovered2(!hovered2);
 
     function copyFunction() {
         let copyText = document.getElementById("newURL");
@@ -35,12 +41,24 @@ const Output = () => {
             
             <div className="font-poppins font-semibold 
             text-white animationForInputBox">
-                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous"></link>
-                <p className="formTitle">Short URL:</p>
-                <input className="outputBox rounded-[10px] bg-opacity-10 border-solid border-2 border-gray-900" id="newURL" type="text" size={42} value={newURL} readOnly={true}/>
-                <div className="btn">
-                    <button onClick={reloadPage}>Refresh</button>
-                    <button className="copyBtn" onClick={copyFunction}>copy <FontAwesomeIcon icon={faCopy} /></button><span className="tooltip">copied</span>
+                <div className="output">
+                    <p className="formTitle">Short URL:</p>
+                    <input className="outputBox rounded-[10px] bg-opacity-10 border-solid border-2 border-gray-900" id="newURL" type="text" value={newURL} readOnly={true}/>
+                    <div className="btn">
+                        <button 
+                            onMouseEnter={handleHover}
+                            onMouseLeave={handleHover} 
+                            onClick={reloadPage}>Refresh <FontAwesomeIcon className={hovered ? 'fa-spin' : ''} 
+                            icon={faArrowsRotate} />
+                        </button>
+                        <button 
+                            className="copyBtn"
+                            onMouseEnter={handleHover2}
+                            onMouseLeave={handleHover2}
+                            onClick={copyFunction}>copy <FontAwesomeIcon className={hovered2 ? 'fa-bounce' : ''}
+                            icon={faCopy} />
+                        </button><span className="tooltip">copied</span>
+                    </div>
                 </div>
             </div>
         )

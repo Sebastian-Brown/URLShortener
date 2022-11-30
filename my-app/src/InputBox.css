@@ -6,7 +6,7 @@
     margin-left: auto;
     margin-right: auto;
     width: fit-content;
-    margin-top: 60vh;
+    margin-top: 59vh;
     z-index: 0;
 }
 
@@ -78,43 +78,7 @@
     font-size: 72px;
 }
 
-@media all and (max-device-width: 720px) {
-    .formTitle {
-        font-size: 20px;
-        overflow: hidden;
-    }
 
-    .InputBox {
-        display: block;
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        margin-top: 40vh;
-        z-index: 2;
-    }
-
-    .Placeholder {
-        margin-top: 50vh;
-        opacity: 0%;
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50px;
-        font-size: 2px;
-    }
-
-    .form {
-        opacity: 100%;
-        z-index: 2;
-    }
-
-    /* .animationForInputBox {} */
-}
 
 .btn {
     margin: 15px 0 40px 3px;
@@ -177,5 +141,62 @@
 }
 
 .btn .copyBtn {
-    margin: 5px 0 40px 50px;
+    margin: 5px 0 40px 15px;
+}
+
+@media all and (max-device-width: 720px) {
+
+    .formTitle {
+        font-size: 25px;
+        overflow: hidden;
+    }
+
+    .InputBox {
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        margin-top: 35vh;
+        z-index: 2;
+    }
+
+    .output {
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        transform: translateY(-40px);
+    }
+
+    .Placeholder {
+        margin-top: 50vh;
+        opacity: 0%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50px;
+        font-size: 2px;
+    }
+
+    .form {
+        opacity: 100%;
+        z-index: 2;
+    }
+
+    .outputBox {
+        font-size: 16px;
+        padding: 5px;
+        width: 90vw;
+    }
+
+
+    /* .animationForInputBox {} */
 }
