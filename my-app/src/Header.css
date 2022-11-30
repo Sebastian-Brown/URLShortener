@@ -54,4 +54,9 @@
         margin-right: auto;
         width: 310px;
     }
+
+    .urlShort {
+        width: 395px;
+        margin-left: 15px;
+    }
 }

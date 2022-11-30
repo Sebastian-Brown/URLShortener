@@ -137,8 +137,11 @@
     color: white;
     background: linear-gradient(185.17deg, #272727 0%, #000000 100%);
     font-size: 18px;
-    padding: 10px;
-    width: 420px;
+    padding-top: 10px;
+    padding-right: 0px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+
 }
 
 .btn .copyBtn {
@@ -172,7 +175,7 @@
         margin-left: auto;
         margin-right: auto;
         width: 90%;
-        transform: translateY(-40px);
+        transform: translateY(-80px);
     }
 
     .Placeholder {
@@ -194,7 +197,10 @@
 
     .outputBox {
         font-size: 16px;
-        padding: 5px;
+        padding-top: 10px;
+        padding-right: 0px;
+        padding-left: 15px;
+        padding-bottom: 10px;
         width: 90vw;
     }
 

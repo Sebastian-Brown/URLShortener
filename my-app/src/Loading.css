@@ -1,0 +1,33 @@
+.loadingText {
+    position: fixed;
+    margin-top: 50vh;
+    width: fit-content;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 4;
+    font-size: 70px;
+    opacity: 0%;
+    color: white;
+
+}
+
+@media all and (max-device-width: 720px) {
+
+    .loadingText {
+        font-size: 40px;
+    }
+}
+
+.blink {
+    animation: blinker 2s linear infinite;
+    font-weight: bold;
+    font-family: 'Arial Narrow Bold', sans-serif
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 30%;
+    }
+}

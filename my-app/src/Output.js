@@ -20,10 +20,6 @@ const Output = () => {
         const tooltip = document.querySelector(".tooltip");
         console.log(copyText.value);
       
-        // Select the text field
-        copyText.select();
-        copyText.setSelectionRange(0, 99999); // For mobile devices
-      
          // Copy the text inside the text field
         navigator.clipboard.writeText(copyText.value);
       
@@ -43,7 +39,7 @@ const Output = () => {
             text-white animationForInputBox">
                 <div className="output">
                     <p className="formTitle">Short URL:</p>
-                    <input className="outputBox rounded-[10px] bg-opacity-10 border-solid border-2 border-gray-900" id="newURL" type="text" value={newURL} readOnly={true}/>
+                    <input className="outputBox rounded-[10px] bg-opacity-10 border-solid border-2 border-gray-900" id="newURL" type="text" value={newURL} size={newURL.length} readOnly={true}/>
                     <div className="btn">
                         <button 
                             onMouseEnter={handleHover}

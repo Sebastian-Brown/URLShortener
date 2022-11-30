@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer'
 import React, {useState} from "react";
 import {spinModels} from "./App.js";
 import Output from "./Output.js";
+import Loading from "./Loading.js"
 
 const InputBox = () => {
 
@@ -12,6 +13,8 @@ const InputBox = () => {
     const [URL, setURL] = useState("");
 
     const [show, setShow] = useState(false);
+
+    const [loading, setLoading] = useState(false);
 
     function handleURLSubmit(e) {
         e.preventDefault();
@@ -25,8 +28,10 @@ const InputBox = () => {
                 "Content-Type": "application/json",
             }
         });
+        setLoading(true)
         setTimeout(() => {
             setShow(!show);
+            setLoading(false)
           }, "5000")
     }
 
@@ -57,6 +62,9 @@ const InputBox = () => {
                 )}
                 </span>
                 </div>
+                {loading &&(
+                    <Loading/>
+                )}
                 <p ref={myRef} className="Placeholder font-poppins
             font-semibold
             text-white">placeholder</p>
