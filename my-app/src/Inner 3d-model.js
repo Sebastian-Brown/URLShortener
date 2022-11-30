@@ -28,13 +28,13 @@ export function InnerModel(props) {
       acceleration -= 0.006
     }
 
-    if (meshRef.current.scale.x >= 0.10 && shrinking === false && finished === false){
+    if (meshRef.current.scale.x >= 0.145 && shrinking === false && finished === false){
       meshRef.current.scale.x -= (acceleration * scaleAcceleration);
       meshRef.current.scale.y -= (acceleration * scaleAcceleration);
       meshRef.current.scale.z -= (acceleration * scaleAcceleration);
       meshRef.current.rotation.x += rotationAcceleration * acceleration * 10.2;
       meshRef.current.rotation.y += rotationAcceleration * acceleration * 10.9;
-      if(meshRef.current.scale.x <= 0.10){
+      if(meshRef.current.scale.x <= 0.145){
         shrinking = true;
       }
     } else if (meshRef.current.scale.x <= 0.25 && shrinking === true && finished === false) {

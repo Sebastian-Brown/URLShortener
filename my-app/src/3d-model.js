@@ -29,13 +29,13 @@ export function Model(props) {
     }
 
     //if the scale is greater than 0.25 than the 3d object will shrink
-    if (meshRef.current.scale.x >= 0.25 && shrinking === false && finished === false){
+    if (meshRef.current.scale.x >= 0.5 && shrinking === false && finished === false){
       meshRef.current.scale.x -= (acceleration * scaleAcceleration);
       meshRef.current.scale.y -= (acceleration * scaleAcceleration);
       meshRef.current.scale.z -= (acceleration * scaleAcceleration);
       meshRef.current.rotation.x += rotationAcceleration * acceleration * 1.2;
       meshRef.current.rotation.y += rotationAcceleration * acceleration * 1.9;
-      if(meshRef.current.scale.x <= 0.25){
+      if(meshRef.current.scale.x <= 0.5){
         shrinking = true;
       }
     } else if (meshRef.current.scale.x <= 1 && shrinking === true && finished === false) {
