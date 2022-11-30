@@ -19,7 +19,7 @@ const InputBox = () => {
     function handleURLSubmit(e) {
         e.preventDefault();
         spinModels()
-        fetch("http://localhost:4000/shortUrl", {
+        fetch("http://www.iansurlshortener.com/shortUrl", {
             method: 'POST',
             body: JSON.stringify({
                 URL,
