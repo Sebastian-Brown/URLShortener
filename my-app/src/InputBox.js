@@ -16,10 +16,13 @@ const InputBox = () => {
 
     const [loading, setLoading] = useState(false);
 
-    function handleURLSubmit(e) {
+    const [o, setO] = useState(null);
+
+    async function handleURLSubmit(e) {
+        
         e.preventDefault();
         spinModels()
-        fetch("http://www.iansurlshortener.com/shortUrl", {
+        fetch("http://52.15.204.47:5/shortUrl", {
             method: 'POST',
             body: JSON.stringify({
                 URL,
@@ -27,7 +30,12 @@ const InputBox = () => {
             headers: {
                 "Content-Type": "application/json",
             }
-        });
+        })
+        .then((response) => response.json())
+          .then((data) => {
+            const dataResponse = data.newCreatedURL
+            setO(dataResponse); 
+          })
         setLoading(true)
         setTimeout(() => {
             setShow(!show);
@@ -58,7 +66,7 @@ const InputBox = () => {
                     </form>
                 )}
                 {show && (
-                    <Output/>
+                    <Output url={o}/>
                 )}
                 </span>
                 </div>

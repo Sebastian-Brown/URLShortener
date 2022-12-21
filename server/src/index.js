@@ -27,14 +27,16 @@ app.post('/shortUrl', async (req, res) => {
     const newURL = new shortURL({
         URL: req.body.URL,
     });
-    newURL.newCreatedURL = `http://www.iansurlshortener.com//${newURL.shortenedURL}`;
-    const createdURL = await newURL.save();
-    res.json(createdURL);
+    newURL.newCreatedURL = `http://www.iansurlshortener.com:5/${newURL.shortenedURL}`;
+    await newURL.save();
+    res.json(newURL);
 });
 
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true, useUnifiedTopology: true
 }).then(() => {
-    app.listen(process.env.PORT || 4000)
+    app.listen(process.env.PORT || 5)
+    console.log('MongoDB Connected...')
 })
+
 
